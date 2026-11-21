@@ -1,0 +1,1421 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>午夜视频 - 品牌影像,深夜内容社区 | 原创精品</title>
+<meta name="description" content="午夜视频官方网站，专注深夜影像与真实故事的原创视频品牌，以高品质内容生态陪伴每一位夜行者，深耕深夜内容垂直领域，打造值得信赖的品牌社区。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314182b'/%3E%3Ccircle cx='32' cy='30' r='11' fill='none' stroke='%23ff7a45' stroke-width='4'/%3E%3Cpath d='M32 8v6M32 46v6M12 30h6M46 30h6' stroke='%23ffb04a' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --midnight-bg:#0d1220;
+  --midnight-panel:#141a2c;
+  --midnight-panel2:#1a2238;
+  --midnight-line:#26304a;
+  --midnight-ink:#e9ecf6;
+  --midnight-mute:#98a2bd;
+  --midnight-accent:#ff7a45;
+  --midnight-accent2:#ffb04a;
+  --midnight-glow:#5b8cff;
+  --midnight-radius:16px;
+  --midnight-shadow:0 18px 40px -18px rgba(0,0,0,.75);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  background:
+    radial-gradient(1200px 600px at 85% -10%,rgba(91,140,255,.16),transparent 60%),
+    radial-gradient(900px 500px at 0% 0%,rgba(255,122,69,.10),transparent 55%),
+    var(--midnight-bg);
+  color:var(--midnight-ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+.midnight-container{width:min(1180px,92%);margin:0 auto}
+.midnight-anchor{scroll-margin-top:150px}
+
+/* ===== 公告条 ===== */
+.midnight-notice{
+  background:linear-gradient(90deg,#2a1a12,#3a2114 45%,#241a2e);
+  border-bottom:1px solid #3d2a1e;
+  color:#ffd9c2;
+  font-size:13px;
+}
+.midnight-notice-inner{
+  display:flex;align-items:center;gap:14px;
+  padding:9px 0;overflow:hidden;
+}
+.midnight-notice-tag{
+  flex:none;background:var(--midnight-accent);color:#191006;
+  font-weight:700;font-size:12px;letter-spacing:.06em;
+  padding:2px 10px;border-radius:999px;
+}
+.midnight-notice-track{display:flex;gap:34px;white-space:nowrap;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.midnight-notice-track span{flex:none;animation:midnight-slide 26s linear infinite}
+@keyframes midnight-slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ===== 吸顶头部 ===== */
+.midnight-header{
+  position:sticky;top:0;z-index:60;
+  backdrop-filter:blur(14px);
+  background:rgba(13,18,32,.86);
+  border-bottom:1px solid var(--midnight-line);
+}
+.midnight-header-inner{
+  display:flex;align-items:center;gap:26px;
+  padding:14px 0;
+}
+.midnight-brand{display:flex;align-items:center;gap:12px;flex:none}
+.midnight-brand-mark{
+  width:42px;height:42px;border-radius:12px;
+  background:linear-gradient(145deg,var(--midnight-accent),#b23cff);
+  display:grid;place-items:center;
+  box-shadow:0 0 24px -6px rgba(255,122,69,.8);
+}
+.midnight-brand-mark svg{width:24px;height:24px}
+.midnight-brand-text strong{display:block;font-size:17px;letter-spacing:.04em}
+.midnight-brand-text em{font-style:normal;font-size:11px;color:var(--midnight-mute);letter-spacing:.24em}
+.midnight-nav{display:flex;gap:4px;margin-left:8px;flex-wrap:wrap}
+.midnight-nav a{
+  font-size:14px;color:var(--midnight-mute);padding:7px 12px;border-radius:9px;
+  transition:color .2s,background .2s;
+}
+.midnight-nav a:hover{color:#fff;background:var(--midnight-panel2)}
+.midnight-header-tools{display:flex;align-items:center;gap:10px;margin-left:auto}
+.midnight-search{
+  display:flex;align-items:center;gap:8px;
+  background:var(--midnight-panel);border:1px solid var(--midnight-line);
+  border-radius:10px;padding:6px 10px;min-width:200px;
+}
+.midnight-search input{
+  background:none;border:0;outline:none;color:var(--midnight-ink);
+  font-size:13px;width:100%;
+}
+.midnight-search input::placeholder{color:#6a7593}
+.midnight-search button{
+  background:none;border:0;color:var(--midnight-accent);font-size:13px;font-weight:600;
+}
+.midnight-search-tip{
+  font-size:12px;color:var(--midnight-accent2);max-width:230px;
+  display:none;
+}
+.midnight-search-tip.is-live{display:block}
+.midnight-burger{
+  display:none;background:var(--midnight-panel);border:1px solid var(--midnight-line);
+  color:var(--midnight-ink);border-radius:9px;padding:7px 11px;font-size:16px;
+}
+.midnight-btn{
+  display:inline-flex;align-items:center;gap:7px;
+  border-radius:10px;padding:9px 18px;font-size:14px;font-weight:600;
+  border:1px solid transparent;transition:transform .18s,box-shadow .2s,background .2s;
+}
+.midnight-btn:hover{transform:translateY(-2px)}
+.midnight-btn-primary{
+  background:linear-gradient(135deg,var(--midnight-accent),#ff4d8d);
+  color:#1a0d08;box-shadow:0 12px 26px -14px rgba(255,77,141,.9);
+}
+.midnight-btn-ghost{
+  border-color:var(--midnight-line);color:var(--midnight-ink);
+  background:var(--midnight-panel);
+}
+.midnight-btn-ghost:hover{background:var(--midnight-panel2)}
+
+/* ===== 首屏 ===== */
+.midnight-hero{padding:64px 0 46px;overflow:hidden}
+.midnight-hero-grid{display:grid;grid-template-columns:6fr 4fr;gap:44px;align-items:center}
+.midnight-kicker{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:12px;letter-spacing:.2em;color:var(--midnight-accent2);
+  border:1px solid #3a3350;border-radius:999px;padding:5px 14px;
+  background:rgba(255,176,74,.06);
+}
+.midnight-kicker i{width:7px;height:7px;border-radius:50%;background:var(--midnight-accent);box-shadow:0 0 10px var(--midnight-accent)}
+.midnight-hero h1{
+  font-size:clamp(44px,6vw,74px);
+  line-height:1.06;letter-spacing:.02em;margin:20px 0 8px;
+  background:linear-gradient(100deg,#fff 20%,#ffcba6 55%,#b58cff 110%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.midnight-hero-sub{font-size:17px;color:var(--midnight-mute);max-width:600px}
+.midnight-hero-desc{
+  margin-top:20px;color:#c2cae0;font-size:14.5px;
+  border-left:2px solid var(--midnight-accent);padding-left:16px;
+}
+.midnight-hero-actions{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.midnight-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px;
+}
+.midnight-stat{
+  background:linear-gradient(160deg,var(--midnight-panel),#101627);
+  border:1px solid var(--midnight-line);border-radius:14px;padding:14px 16px;
+}
+.midnight-stat b{display:block;font-size:26px;color:#fff;letter-spacing:.02em}
+.midnight-stat span{font-size:12px;color:var(--midnight-mute)}
+.midnight-hero-visual{position:relative}
+.midnight-hero-poster{
+  border-radius:20px;overflow:hidden;border:1px solid #323c5c;
+  box-shadow:var(--midnight-shadow);position:relative;
+}
+.midnight-hero-poster img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.midnight-hero-poster figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:22px 20px 18px;
+  background:linear-gradient(to top,rgba(8,11,20,.94),transparent);
+  font-size:13px;color:#dfe5f4;
+}
+.midnight-hero-badge{
+  position:absolute;top:-14px;right:18px;z-index:2;
+  background:var(--midnight-accent);color:#1a0d08;font-size:12px;font-weight:700;
+  padding:6px 14px;border-radius:999px;box-shadow:0 10px 24px -12px #ff7a45;
+}
+
+/* ===== 通用 section ===== */
+.midnight-section{padding:58px 0}
+.midnight-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:30px;flex-wrap:wrap}
+.midnight-section-head h2{
+  font-size:clamp(24px,3vw,34px);letter-spacing:.02em;line-height:1.25;
+}
+.midnight-section-head h2 span{color:var(--midnight-accent)}
+.midnight-section-head p{color:var(--midnight-mute);font-size:14px;max-width:560px;margin-top:8px}
+.midnight-eyebrow{font-size:12px;letter-spacing:.26em;color:var(--midnight-accent2);margin-bottom:8px}
+
+/* ===== 焦点内容 ===== */
+.midnight-focus-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:22px}
+.midnight-focus-main{
+  position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--midnight-line);
+  min-height:380px;display:flex;align-items:flex-end;
+  box-shadow:var(--midnight-shadow);
+}
+.midnight-focus-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.midnight-focus-main .midnight-focus-copy{
+  position:relative;z-index:2;padding:28px;
+  background:linear-gradient(to top,rgba(7,9,16,.95),rgba(7,9,16,.25) 70%,transparent);
+  width:100%;
+}
+.midnight-focus-copy h3{font-size:24px;line-height:1.35;margin:10px 0 8px}
+.midnight-focus-copy p{font-size:13.5px;color:#c3cbe0}
+.midnight-focus-side{display:grid;gap:16px}
+.midnight-mini-card{
+  display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:stretch;
+  background:var(--midnight-panel);border:1px solid var(--midnight-line);
+  border-radius:14px;padding:10px;transition:border-color .2s,transform .2s;
+}
+.midnight-mini-card:hover{border-color:#3d4a72;transform:translateY(-3px)}
+.midnight-mini-card img{width:120px;height:80px;object-fit:cover;border-radius:10px}
+.midnight-mini-card h4{font-size:15px;line-height:1.4;margin-bottom:4px}
+.midnight-mini-card small{font-size:12px;color:var(--midnight-mute)}
+.midnight-chip-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+.midnight-chip{
+  font-size:11px;color:#aab4cf;border:1px solid #33405f;border-radius:999px;
+  padding:2px 9px;background:#161e33;
+}
+.midnight-chip.is-hot{color:#ffcb9e;border-color:#5c3a26;background:#241610}
+
+/* ===== 视频流 ===== */
+.midnight-video-filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:24px}
+.midnight-filter{
+  background:var(--midnight-panel);border:1px solid var(--midnight-line);
+  color:var(--midnight-mute);border-radius:999px;padding:6px 16px;font-size:13px;
+  transition:all .2s;
+}
+.midnight-filter.is-active,.midnight-filter:hover{
+  color:#1a0d08;background:var(--midnight-accent2);border-color:var(--midnight-accent2);font-weight:600;
+}
+.midnight-video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.midnight-video-card{
+  background:var(--midnight-panel);border:1px solid var(--midnight-line);
+  border-radius:16px;overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .22s,box-shadow .22s,border-color .22s;
+}
+.midnight-video-card:hover{transform:translateY(-6px);box-shadow:var(--midnight-shadow);border-color:#3f4d78}
+.midnight-cover{position:relative;overflow:hidden}
+.midnight-cover img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .4s}
+.midnight-video-card:hover .midnight-cover img{transform:scale(1.05)}
+.midnight-cover .midnight-cover-tag{
+  position:absolute;left:10px;top:10px;font-size:11px;font-weight:600;
+  background:rgba(9,12,20,.78);border:1px solid #3a4566;color:#ffd9c2;
+  padding:2px 9px;border-radius:999px;backdrop-filter:blur(4px);
+}
+.midnight-play{
+  position:absolute;inset:0;margin:auto;width:52px;height:52px;border-radius:50%;
+  background:rgba(12,16,28,.62);border:1px solid rgba(255,255,255,.35);
+  display:grid;place-items:center;backdrop-filter:blur(3px);
+  transition:background .2s,transform .2s;
+}
+.midnight-play::after{content:"";display:block;margin-left:4px;border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent}
+.midnight-video-card:hover .midnight-play{background:rgba(255,122,69,.85);transform:scale(1.08)}
+.midnight-video-body{padding:15px 16px 16px;display:flex;flex-direction:column;gap:9px;flex:1}
+.midnight-video-body h3{font-size:16px;line-height:1.45}
+.midnight-video-body p{font-size:13px;color:var(--midnight-mute);flex:1}
+.midnight-meta{display:flex;align-items:center;gap:8px;font-size:12px;color:#8994b3}
+.midnight-avatar{
+  width:24px;height:24px;border-radius:50%;display:grid;place-items:center;
+  font-size:11px;font-weight:700;color:#0f1422;flex:none;
+}
+.midnight-card-actions{
+  display:flex;align-items:center;gap:6px;padding-top:10px;border-top:1px dashed #2b3550;
+}
+.midnight-act{
+  background:none;border:1px solid transparent;color:#93a0c0;
+  border-radius:8px;padding:3px 8px;font-size:12px;display:inline-flex;align-items:center;gap:4px;
+  transition:color .18s,background .18s;
+}
+.midnight-act:hover{background:#1c2540;color:#dfe6f7}
+.midnight-act.is-liked{color:#ff7a9c}
+.midnight-act.is-saved{color:var(--midnight-accent2)}
+.midnight-act-right{margin-left:auto}
+
+/* ===== 创作者 ===== */
+.midnight-creator-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.midnight-creator{
+  background:linear-gradient(170deg,var(--midnight-panel2),#121828);
+  border:1px solid var(--midnight-line);border-radius:16px;padding:22px 18px;
+  text-align:center;transition:transform .2s,border-color .2s;
+}
+.midnight-creator:hover{transform:translateY(-5px);border-color:#46547f}
+.midnight-creator .midnight-avatar{width:64px;height:64px;font-size:24px;margin:0 auto 12px;border-radius:20px}
+.midnight-creator h3{font-size:16px}
+.midnight-creator .midnight-role{font-size:12px;color:var(--midnight-accent2);margin-bottom:8px}
+.midnight-creator p{font-size:13px;color:var(--midnight-mute);min-height:66px}
+.midnight-creator-stats{display:flex;justify-content:center;gap:16px;font-size:12px;color:#8f9bb9;border-top:1px dashed #2b3550;padding-top:10px;margin-top:6px}
+.midnight-creator-stats b{color:#fff;display:block;font-size:14px}
+
+/* ===== 深度解析 ===== */
+.midnight-essay{
+  background:
+    radial-gradient(600px 260px at 100% 0%,rgba(91,140,255,.16),transparent 65%),
+    linear-gradient(165deg,#151b2e,#101524);
+  border:1px solid var(--midnight-line);border-radius:22px;
+  padding:clamp(24px,4vw,52px);
+}
+.midnight-essay h2{font-size:clamp(24px,3vw,32px);margin-bottom:6px}
+.midnight-essay .midnight-essay-lead{color:var(--midnight-accent2);font-size:14px;margin-bottom:20px}
+.midnight-essay-grid{columns:2;column-gap:44px}
+.midnight-essay-grid p{font-size:14.5px;color:#bcc5dd;margin-bottom:16px;break-inside:avoid;text-align:justify}
+.midnight-essay-highlight{
+  background:#1b2338;border-left:3px solid var(--midnight-accent);
+  padding:12px 16px;border-radius:0 10px 10px 0;color:#e2e8f7;font-size:14px;
+}
+
+/* ===== 专题 ===== */
+.midnight-topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.midnight-topic{
+  border-radius:18px;overflow:hidden;border:1px solid var(--midnight-line);
+  background:var(--midnight-panel);display:flex;flex-direction:column;
+  transition:transform .22s,border-color .22s;
+}
+.midnight-topic:hover{transform:translateY(-5px);border-color:#46547f}
+.midnight-topic img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.midnight-topic-body{padding:16px 18px 18px}
+.midnight-topic-body h3{font-size:16.5px;margin-bottom:6px}
+.midnight-topic-body p{font-size:13px;color:var(--midnight-mute);margin-bottom:12px}
+.midnight-status{
+  display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#9fe0b6;
+  background:#14261d;border:1px solid #23452f;border-radius:999px;padding:2px 10px;
+}
+.midnight-status.is-soon{color:#ffc996;background:#2a1d12;border-color:#523621}
+.midnight-status i{width:6px;height:6px;border-radius:50%;background:currentColor}
+
+/* ===== 影像墙 ===== */
+.midnight-wall{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.midnight-wall figure{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--midnight-line);background:var(--midnight-panel)}
+.midnight-wall figure img{width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;transition:transform .35s}
+.midnight-wall figure:hover img{transform:scale(1.07)}
+.midnight-wall figcaption{
+  position:absolute;left:0;right:0;bottom:0;font-size:11.5px;color:#e6ebf8;
+  padding:22px 10px 8px;background:linear-gradient(to top,rgba(6,9,16,.92),transparent);
+}
+.midnight-wall .midnight-wall-lg{grid-column:span 2;grid-row:span 2}
+.midnight-wall .midnight-wall-md{grid-column:span 2}
+.midnight-wall .midnight-wall-lg img{aspect-ratio:auto}
+.midnight-wall .midnight-wall-md img{aspect-ratio:16/10}
+
+/* ===== 评价 ===== */
+.midnight-quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.midnight-quote{
+  background:var(--midnight-panel);border:1px solid var(--midnight-line);
+  border-radius:16px;padding:20px;position:relative;
+}
+.midnight-quote::before{
+  content:"“";position:absolute;top:-6px;right:18px;font-size:56px;color:#2c3654;
+  font-family:Georgia,serif;line-height:1;
+}
+.midnight-quote p{font-size:13.5px;color:#c6cfe4;min-height:88px}
+.midnight-quote footer{display:flex;align-items:center;gap:9px;margin-top:12px;font-size:12px;color:#8f9bb9}
+.midnight-quote .midnight-avatar{width:28px;height:28px;font-size:12px}
+.midnight-quote .midnight-stars{color:var(--midnight-accent2);font-size:12px;letter-spacing:.14em}
+
+/* ===== 榜单 ===== */
+.midnight-rank-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.midnight-rank{background:var(--midnight-panel);border:1px solid var(--midnight-line);border-radius:18px;padding:20px 22px}
+.midnight-rank h3{font-size:16px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.midnight-rank h3 span{font-size:11px;color:var(--midnight-accent2);border:1px solid #4a3a26;border-radius:999px;padding:1px 9px}
+.midnight-rank ol{list-style:none;display:flex;flex-direction:column;gap:11px}
+.midnight-rank li{display:flex;align-items:center;gap:12px;font-size:13.5px;color:#cbd3e8}
+.midnight-rank .midnight-no{
+  width:22px;height:22px;flex:none;border-radius:7px;display:grid;place-items:center;
+  font-size:12px;font-weight:700;background:#1e2740;color:#9dabce;
+}
+.midnight-rank li:nth-child(1) .midnight-no{background:linear-gradient(135deg,#ff7a45,#ffb04a);color:#1a0d08}
+.midnight-rank li:nth-child(2) .midnight-no{background:#3b4a74;color:#e7ecfa}
+.midnight-rank li:nth-child(3) .midnight-no{background:#2b3552;color:#cfd7ec}
+.midnight-rank .midnight-rank-num{margin-left:auto;font-size:12px;color:#7e89a8}
+
+/* ===== 更新日志 ===== */
+.midnight-log{display:grid;gap:0;border-left:2px solid #273251;margin-left:8px}
+.midnight-log-item{position:relative;padding:0 0 24px 26px}
+.midnight-log-item::before{
+  content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;
+  background:var(--midnight-bg);border:2px solid var(--midnight-accent);
+}
+.midnight-log-item time{font-size:12px;color:var(--midnight-accent2);letter-spacing:.06em}
+.midnight-log-item h3{font-size:15.5px;margin:3px 0 4px}
+.midnight-log-item p{font-size:13px;color:var(--midnight-mute)}
+
+/* ===== FAQ ===== */
+.midnight-faq{display:grid;gap:10px;max-width:880px}
+.midnight-faq details{
+  background:var(--midnight-panel);border:1px solid var(--midnight-line);
+  border-radius:12px;padding:14px 18px;transition:border-color .2s,background .2s;
+}
+.midnight-faq details[open]{border-color:#3f4d78;background:#161e33}
+.midnight-faq summary{
+  cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;
+  display:flex;justify-content:space-between;gap:14px;align-items:center;
+}
+.midnight-faq summary::-webkit-details-marker{display:none}
+.midnight-faq summary::after{content:"+";color:var(--midnight-accent);font-size:18px;font-weight:400}
+.midnight-faq details[open] summary::after{content:"−"}
+.midnight-faq p{font-size:13.5px;color:var(--midnight-mute);margin-top:10px;padding-top:10px;border-top:1px dashed #2b3550}
+
+/* ===== 投稿 / 联系 ===== */
+.midnight-cta{
+  border-radius:24px;padding:clamp(26px,4vw,48px);
+  background:
+    radial-gradient(500px 240px at 90% 10%,rgba(255,77,141,.24),transparent 60%),
+    linear-gradient(140deg,#1c1526,#121a2c 60%,#111726);
+  border:1px solid #3a3350;
+  display:grid;grid-template-columns:1.3fr 1fr;gap:34px;align-items:center;
+}
+.midnight-cta h2{font-size:clamp(24px,3vw,32px);margin-bottom:10px}
+.midnight-cta p{color:#c6cfe4;font-size:14px}
+.midnight-cta-actions{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.midnight-contact-list{display:grid;gap:12px;font-size:13.5px;color:#c6cfe4}
+.midnight-contact-list div{display:flex;gap:10px;align-items:center;background:#141b2c;border:1px solid #293350;border-radius:12px;padding:11px 14px}
+.midnight-contact-list b{color:var(--midnight-accent2);font-weight:600;min-width:56px}
+
+/* ===== 页脚 ===== */
+.midnight-footer{border-top:1px solid var(--midnight-line);background:#0b101c;padding:44px 0 26px;margin-top:20px}
+.midnight-footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px}
+.midnight-footer h4{font-size:13.5px;margin-bottom:12px;color:#dfe5f5}
+.midnight-footer a,.midnight-footer li{font-size:12.8px;color:#8e9ab8;line-height:2.1;list-style:none}
+.midnight-footer a:hover{color:var(--midnight-accent2)}
+.midnight-footer p{font-size:12.8px;color:#8e9ab8}
+.midnight-footer-bottom{
+  margin-top:30px;padding-top:18px;border-top:1px solid #1e2740;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:12px;color:#75809e;
+}
+
+/* ===== Toast / 弹窗 ===== */
+.midnight-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+  background:#1e2740;border:1px solid #3d4a72;color:#eef2fb;
+  padding:10px 20px;border-radius:999px;font-size:13px;z-index:200;
+  opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;
+  box-shadow:var(--midnight-shadow);
+}
+.midnight-toast.is-live{opacity:1;transform:translate(-50%,0)}
+.midnight-modal{
+  position:fixed;inset:0;z-index:150;display:none;
+  background:rgba(6,9,16,.7);backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;padding:20px;
+}
+.midnight-modal.is-open{display:flex}
+.midnight-modal-card{
+  background:linear-gradient(170deg,#181f33,#111726);
+  border:1px solid #3a4566;border-radius:18px;
+  width:min(520px,100%);padding:26px;position:relative;
+  box-shadow:0 30px 70px -30px #000;
+  max-height:86vh;overflow:auto;
+}
+.midnight-modal-card h3{font-size:19px;margin-bottom:6px}
+.midnight-modal-card .midnight-modal-sub{font-size:12.5px;color:var(--midnight-mute);margin-bottom:16px}
+.midnight-modal-close{
+  position:absolute;top:12px;right:12px;background:#1e2740;border:1px solid #3a4566;
+  color:#cfd7ec;width:30px;height:30px;border-radius:50%;font-size:15px;line-height:1;
+}
+.midnight-field{display:grid;gap:6px;margin-bottom:12px}
+.midnight-field label{font-size:12.5px;color:#a9b4d0}
+.midnight-field input,.midnight-field textarea{
+  background:#101627;border:1px solid #2c3754;border-radius:10px;
+  padding:9px 12px;color:var(--midnight-ink);font-size:13.5px;outline:none;width:100%;
+  font-family:inherit;
+}
+.midnight-field input:focus,.midnight-field textarea:focus{border-color:var(--midnight-accent)}
+.midnight-share-row{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 4px}
+.midnight-share-row button{
+  background:#1c2540;border:1px solid #33405f;color:#d5dcf0;border-radius:10px;
+  padding:8px 15px;font-size:13px;
+}
+.midnight-share-row button:hover{border-color:var(--midnight-accent);color:#fff}
+
+.midnight-top{
+  position:fixed;right:22px;bottom:26px;z-index:90;
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(140deg,var(--midnight-accent),#ff4d8d);
+  color:#1a0d08;border:0;display:grid;place-items:center;font-size:18px;font-weight:700;
+  opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;
+  box-shadow:0 14px 30px -14px #ff4d8d;
+}
+.midnight-top.is-live{opacity:1;pointer-events:auto}
+.midnight-top:hover{transform:translateY(-3px)}
+
+/* ===== 响应式 ===== */
+@media (max-width:1024px){
+  .midnight-hero-grid{grid-template-columns:1fr;gap:34px}
+  .midnight-hero-poster img{aspect-ratio:16/9}
+  .midnight-focus-grid{grid-template-columns:1fr}
+  .midnight-video-grid{grid-template-columns:repeat(2,1fr)}
+  .midnight-creator-grid{grid-template-columns:repeat(2,1fr)}
+  .midnight-topic-grid{grid-template-columns:repeat(2,1fr)}
+  .midnight-quote-grid{grid-template-columns:1fr 1fr}
+  .midnight-footer-grid{grid-template-columns:1fr 1fr}
+  .midnight-cta{grid-template-columns:1fr}
+  .midnight-essay-grid{columns:1}
+  .midnight-rank-wrap{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .midnight-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;
+    background:#0f1524;border-bottom:1px solid var(--midnight-line);
+    flex-direction:column;padding:10px 16px 16px;gap:2px;
+  }
+  .midnight-nav.is-open{display:flex}
+  .midnight-header-inner{position:relative;flex-wrap:wrap}
+  .midnight-burger{display:block;order:3}
+  .midnight-search{min-width:0;flex:1}
+  .midnight-header-tools{order:2;width:100%;margin-left:0}
+  .midnight-search-tip{display:none!important}
+  .midnight-video-grid{grid-template-columns:1fr}
+  .midnight-creator-grid{grid-template-columns:1fr}
+  .midnight-topic-grid{grid-template-columns:1fr}
+  .midnight-quote-grid{grid-template-columns:1fr}
+  .midnight-wall{grid-template-columns:repeat(3,1fr)}
+  .midnight-wall .midnight-wall-lg,.midnight-wall .midnight-wall-md{grid-column:span 3;grid-row:auto}
+  .midnight-wall figure img{aspect-ratio:16/10}
+  .midnight-footer-grid{grid-template-columns:1fr}
+  .midnight-stats{grid-template-columns:1fr 1fr}
+  .midnight-hero{padding:40px 0 24px}
+  .midnight-section{padding:40px 0}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 公告条 -->
+<div class="midnight-notice" id="midnightNotice">
+  <div class="midnight-container midnight-notice-inner">
+    <span class="midnight-notice-tag">官方发布</span>
+    <div class="midnight-notice-track" aria-label="平台最新更新">
+      <span>11月18日｜《午夜十二点的面馆》第4集上线，城市深夜食堂企划持续更新中</span>
+      <span>11月15日｜「夜行者影像挑战」报名开启，投稿截止12月20日</span>
+      <span>11月12日｜创作者开放日第7期开放预约，限60席</span>
+      <span>11月18日｜《午夜十二点的面馆》第4集上线，城市深夜食堂企划持续更新中</span>
+      <span>11月15日｜「夜行者影像挑战」报名开启，投稿截止12月20日</span>
+      <span>11月12日｜创作者开放日第7期开放预约，限60席</span>
+    </div>
+  </div>
+</div>
+
+<!-- 页头 -->
+<header class="midnight-header">
+  <div class="midnight-container midnight-header-inner">
+    <a class="midnight-brand" href="#midnightTop" aria-label="午夜视频官方网站首页">
+      <span class="midnight-brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 2a7 7 0 0 0-7 7c0 3.2 2.2 5.3 4.2 7.1.7.6 1.1 1.5 1.1 2.4V20h3.4v-1.5c0-.9.4-1.8 1.1-2.4C16.8 14.3 19 12.2 19 9a7 7 0 0 0-7-7Z" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/>
+          <circle cx="12" cy="9" r="2.2" fill="#fff"/>
+        </svg>
+      </span>
+      <span class="midnight-brand-text">
+        <strong>午夜视频</strong>
+        <em>MIDNIGHT</em>
+      </span>
+    </a>
+    <nav class="midnight-nav" id="midnightNav" aria-label="主导航">
+      <a href="#midnightTop">首页</a>
+      <a href="#midnightVideos">视频</a>
+      <a href="#midnightTopics">专题</a>
+      <a href="#midnightCreators">创作者</a>
+      <a href="#midnightStory">品牌故事</a>
+      <a href="#midnightLog">动态</a>
+      <a href="#midnightFaq">帮助</a>
+      <a href="#midnightContact">联系</a>
+    </nav>
+    <div class="midnight-header-tools">
+      <form class="midnight-search" id="midnightSearchForm" role="search" onsubmit="return false;">
+        <input type="search" id="midnightSearchInput" placeholder="搜索片名 / 创作者 / 专题" aria-label="站内搜索">
+        <button type="button" id="midnightSearchBtn">搜索</button>
+      </form>
+      <button class="midnight-burger" id="midnightBurger" aria-label="展开导航" aria-expanded="false">☰</button>
+      <button class="midnight-btn midnight-btn-primary" data-midnight-open="submit" style="display:none"></button>
+    </div>
+  </div>
+  <div class="midnight-container">
+    <div class="midnight-search-tip" id="midnightSearchTip" role="status"></div>
+  </div>
+</header>
+
+<main id="midnightTop">
+
+  <!-- 首屏 -->
+  <section class="midnight-hero">
+    <div class="midnight-container midnight-hero-grid">
+      <div>
+        <span class="midnight-kicker"><i></i>午夜视频 · 品牌官网</span>
+        <h1>午夜视频</h1>
+        <p class="midnight-hero-sub">让深夜的故事被看见 —— 一个专注深夜影像与真实讲述的原创视频品牌</p>
+        <p class="midnight-hero-desc">午夜视频官方网站面向夜行者、自由创作者与城市观察者，持续输出精品内容。我们相信夜晚不是空白，而是一天里最诚实的时段，值得被专业地记录与呈现。</p>
+        <div class="midnight-hero-actions">
+          <a class="midnight-btn midnight-btn-primary" href="#midnightVideos">进入视频频道</a>
+          <button class="midnight-btn midnight-btn-ghost" data-midnight-open="submit">投稿报名</button>
+          <button class="midnight-btn midnight-btn-ghost" data-midnight-open="share">分享本站</button>
+        </div>
+        <div class="midnight-stats">
+          <div class="midnight-stat"><b data-midnight-count="1280">0</b><span>原创影像作品</span></div>
+          <div class="midnight-stat"><b data-midnight-count="236">0</b><span>签约创作者</span></div>
+          <div class="midnight-stat"><b data-midnight-count="94">0</b><span>用户口碑好评率 %</span></div>
+        </div>
+      </div>
+      <div class="midnight-hero-visual">
+        <span class="midnight-hero-badge">本期主推企划</span>
+        <figure class="midnight-hero-poster">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 800'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%2311203a'/%3E%3Cstop offset='0.55' stop-color='%232a2238'/%3E%3Cstop offset='1' stop-color='%23402a22'/%3E%3C/linearGradient%3E%3ClinearGradient id='lamp' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23ffcf8a' stop-opacity='0.95'/%3E%3Cstop offset='1' stop-color='%23ff7a45' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='800' fill='url(%23sky)'/%3E%3Ccircle cx='490' cy='150' r='52' fill='%23ffe6b8' opacity='0.9'/%3E%3Ccircle cx='490' cy='150' r='92' fill='%23ffe6b8' opacity='0.12'/%3E%3Cpath d='M0 620 L80 540 L150 590 L230 500 L310 570 L400 470 L470 550 L560 480 L640 560 L640 800 L0 800 Z' fill='%23131b2e'/%3E%3Crect x='70' y='560' width='20' height='150' fill='%23222a42'/%3E%3Crect x='170' y='520' width='20' height='190' fill='%23222a42'/%3E%3Crect x='270' y='575' width='20' height='135' fill='%23222a42'/%3E%3Crect x='430' y='540' width='20' height='170' fill='%23222a42'/%3E%3Crect x='540' y='585' width='20' height='125' fill='%23222a42'/%3E%3Cellipse cx='180' cy='520' rx='54' ry='90' fill='url(%23lamp)'/%3E%3Cellipse cx='440' cy='540' rx='46' ry='80' fill='url(%23lamp)'/%3E%3Crect x='0' y='700' width='640' height='100' fill='%230e1423'/%3E%3Cpath d='M0 706 Q160 684 320 704 T640 700' stroke='%23ffb04a' stroke-width='2' opacity='0.35' fill='none'/%3E%3Ctext x='40' y='120' font-size='22' fill='%23ffd9c2' font-family='sans-serif' opacity='0.8'%3E23:47 / 街灯下%3C/text%3E%3C/svg%3E" alt="午夜视频主推企划《街灯下》夜色路灯视觉封面">
+          <figcaption>《街灯下》｜记录城市在零点之后仍然亮着的那几盏灯，第2季共8集，每周三更新。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 焦点内容 -->
+  <section class="midnight-section midnight-anchor" id="midnightFocus">
+    <div class="midnight-container">
+      <div class="midnight-section-head">
+        <div>
+          <div class="midnight-eyebrow">FOCUS / 本期焦点</div>
+          <h2>焦点<span>影像</span></h2>
+          <p>由午夜视频编辑部与签约创作者共同推出的重点内容，覆盖人物访谈、城市探索与创作幕后。</p>
+        </div>
+        <a class="midnight-btn midnight-btn-ghost" href="#midnightVideos">查看全部视频</a>
+      </div>
+      <div class="midnight-focus-grid">
+        <article class="midnight-focus-main">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 520'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231b2a4a'/%3E%3Cstop offset='0.6' stop-color='%233a2a4d'/%3E%3Cstop offset='1' stop-color='%23542f26'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='900' height='520' fill='url(%23g1)'/%3E%3Cg opacity='0.9'%3E%3Crect x='120' y='180' width='180' height='260' rx='8' fill='%23131a2b'/%3E%3Crect x='340' y='130' width='220' height='310' rx='8' fill='%231a2237'/%3E%3Crect x='600' y='200' width='190' height='240' rx='8' fill='%23131a2b'/%3E%3C/g%3E%3Cg fill='%23ffcf8a' opacity='0.75'%3E%3Crect x='150' y='220' width='40' height='30' rx='3'/%3E%3Crect x='210' y='220' width='40' height='30' rx='3'/%3E%3Crect x='380' y='175' width='46' height='34' rx='3'/%3E%3Crect x='452' y='175' width='46' height='34' rx='3'/%3E%3Crect x='640' y='245' width='40' height='30' rx='3'/%3E%3C/g%3E%3Cpath d='M0 440 Q220 400 450 436 T900 430 L900 520 L0 520 Z' fill='%230c111d'/%3E%3Cpath d='M60 470 Q300 440 560 468 T840 465' stroke='%23ffb04a' stroke-width='3' fill='none' opacity='0.5'/%3E%3C/svg%3E" alt="焦点影像《凌晨四点开的便利店》街道与店窗灯光封面">
+          <div class="midnight-focus-copy">
+            <div class="midnight-chip-row"><span class="midnight-chip is-hot">人物访谈</span><span class="midnight-chip">城市探索</span><span class="midnight-chip">高清正版</span></div>
+            <h3>《凌晨四点开的便利店》：和守夜人聊了三个小时</h3>
+            <p>午夜视频独家策划，走进城市里最早亮灯的那家便利店，记录夜班店长、代驾司机与清晨送报人的真实生活切面。</p>
+          </div>
+        </article>
+        <div class="midnight-focus-side">
+          <article class="midnight-mini-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 160'%3E%3Crect width='240' height='160' fill='%2314212a'/%3E%3Ccircle cx='190' cy='40' r='22' fill='%236fe0c0' opacity='0.85'/%3E%3Cpath d='M0 120 Q60 96 120 118 T240 112 L240 160 L0 160 Z' fill='%230e1a20'/%3E%3Cpath d='M20 132 L52 96 L84 132' stroke='%236fe0c0' stroke-width='3' fill='none'/%3E%3C/svg%3E" alt="《深夜厨房的三种声音》厨房与青色灯光封面">
+            <div>
+              <h4>深夜厨房的三种声音</h4>
+              <small>美食烹饪 · 08:42</small>
+              <div class="midnight-chip-row"><span class="midnight-chip">治愈影像</span></div>
+            </div>
+          </article>
+          <article class="midnight-mini-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 160'%3E%3Crect width='240' height='160' fill='%23231836'/%3E%3Ccircle cx='60' cy='52' r='26' fill='%23b58cff' opacity='0.8'/%3E%3Cpath d='M120 40 L170 90 L120 140 L70 90 Z' fill='none' stroke='%23ffb04a' stroke-width='3' opacity='0.7'/%3E%3Ccircle cx='196' cy='124' r='12' fill='%23ff7a9c' opacity='0.8'/%3E%3C/svg%3E" alt="《我的镜头只在下半夜打开》紫色几何影像封面">
+            <div>
+              <h4>我的镜头只在下半夜打开</h4>
+              <small>创作幕后 · 11:05</small>
+              <div class="midnight-chip-row"><span class="midnight-chip">创作者故事</span></div>
+            </div>
+          </article>
+          <article class="midnight-mini-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 160'%3E%3Crect width='240' height='160' fill='%23142031'/%3E%3Cpath d='M0 100 L40 70 L80 100 L120 60 L160 100 L200 74 L240 100 L240 160 L0 160 Z' fill='%231e3350'/%3E%3Cpath d='M0 128 L50 108 L100 130 L150 106 L200 130 L240 116' stroke='%235b8cff' stroke-width='3' fill='none'/%3E%3Ccircle cx='200' cy='44' r='14' fill='%23dfe8ff' opacity='0.9'/%3E%3C/svg%3E" alt="《夜骑三十公里》蓝色道路与骑行封面">
+            <div>
+              <h4>夜骑三十公里</h4>
+              <small>户外活动 · 15:20</small>
+              <div class="midnight-chip-row"><span class="midnight-chip">挑战</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 视频流 -->
+  <section class="midnight-section midnight-anchor" id="midnightVideos">
+    <div class="midnight-container">
+      <div class="midnight-section-head">
+        <div>
+          <div class="midnight-eyebrow">VIDEO / 热门视频流</div>
+          <h2>正在被<span>反复观看</span>的作品</h2>
+          <p>午夜视频精选原创内容，按题材分类呈现。所有作品均为平台原创或已获授权，标注高清与正版来源。</p>
+        </div>
+      </div>
+      <div class="midnight-video-filters" id="midnightFilters">
+        <button class="midnight-filter is-active" data-filter="all">全部</button>
+        <button class="midnight-filter" data-filter="city">城市探索</button>
+        <button class="midnight-filter" data-filter="people">人物访谈</button>
+        <button class="midnight-filter" data-filter="life">生活方式</button>
+        <button class="midnight-filter" data-filter="craft">创作幕后</button>
+      </div>
+      <div class="midnight-video-grid" id="midnightVideoGrid">
+
+        <article class="midnight-video-card" data-cat="city">
+          <div class="midnight-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%230f1a2c'/%3E%3Cg fill='%231a2a44'%3E%3Crect x='30' y='90' width='60' height='180'/%3E%3Crect x='110' y='50' width='70' height='220'/%3E%3Crect x='200' y='110' width='55' height='160'/%3E%3Crect x='275' y='30' width='80' height='240'/%3E%3Crect x='375' y='96' width='70' height='174'/%3E%3C/g%3E%3Cg fill='%23ffcf8a' opacity='0.7'%3E%3Crect x='44' y='108' width='12' height='14'/%3E%3Crect x='66' y='108' width='12' height='14'/%3E%3Crect x='126' y='72' width='12' height='14'/%3E%3Crect x='150' y='72' width='12' height='14'/%3E%3Crect x='292' y='56' width='14' height='16'/%3E%3Crect x='320' y='56' width='14' height='16'/%3E%3Crect x='392' y='118' width='12' height='14'/%3E%3C/g%3E%3Cpath d='M0 262 L480 250 L480 270 L0 270 Z' fill='%230a1120'/%3E%3C/svg%3E" alt="《午夜十二点的面馆》第4集 城市夜景与面馆灯箱封面">
+            <span class="midnight-cover-tag">城市探索</span>
+            <span class="midnight-play" aria-hidden="true"></span>
+          </div>
+          <div class="midnight-video-body">
+            <h3>午夜十二点的面馆 · 第4集</h3>
+            <p>一碗热汤，一个不愿回家的人。我们跟拍了这家开在巷口三十年的面馆，记录凌晨两点到四点的食客。</p>
+            <div class="midnight-meta"><span class="midnight-avatar" style="background:#ffb04a">顾</span><span>顾南巷</span><span>·</span><span>2.1万次</span><span>·</span><span>12:18</span></div>
+            <div class="midnight-card-actions">
+              <button class="midnight-act" data-midnight-like>♡ <span>426</span></button>
+              <button class="midnight-act" data-midnight-save>☆ 收藏</button>
+              <button class="midnight-act midnight-act-right" data-midnight-open="comment">评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="midnight-video-card" data-cat="people">
+          <div class="midnight-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Cdefs%3E%3CradialGradient id='p1' cx='0.6' cy='0.35' r='0.6'%3E%3Cstop offset='0' stop-color='%23ff9a6a' stop-opacity='0.9'/%3E%3Cstop offset='1' stop-color='%23241420' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='480' height='270' fill='%231a1424'/%3E%3Crect width='480' height='270' fill='url(%23p1)'/%3E%3Ccircle cx='290' cy='120' r='44' fill='%232c2033'/%3E%3Cpath d='M250 270 Q250 172 290 172 Q330 172 330 270 Z' fill='%232c2033'/%3E%3Crect x='70' y='80' width='120' height='150' rx='6' fill='%23332a3f' opacity='0.7'/%3E%3C/svg%3E" alt="《守夜人访谈录》橙色人物剪影封面">
+            <span class="midnight-cover-tag">人物访谈</span>
+            <span class="midnight-play" aria-hidden="true"></span>
+          </div>
+          <div class="midnight-video-body">
+            <h3>守夜人访谈录 · 代驾司机的第 1830 个夜晚</h3>
+            <p>他记得这座城市每一个代驾单的起点，却很少记得自己几点回家。一场关于夜晚职业的深度对谈。</p>
+            <div class="midnight-meta"><span class="midnight-avatar" style="background:#b58cff">沈</span><span>沈亦舟</span><span>·</span><span>1.7万次</span><span>·</span><span>21:40</span></div>
+            <div class="midnight-card-actions">
+              <button class="midnight-act" data-midnight-like>♡ <span>312</span></button>
+              <button class="midnight-act" data-midnight-save>☆ 收藏</button>
+              <button class="midnight-act midnight-act-right" data-midnight-open="comment">评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="midnight-video-card" data-cat="life">
+          <div class="midnight-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23140f22'/%3E%3Ccircle cx='360' cy='62' r='30' fill='%23ffe6b8' opacity='0.8'/%3E%3Crect x='40' y='150' width='400' height='16' rx='8' fill='%232b2340'/%3E%3Crect x='90' y='120' width='40' height='30' rx='4' fill='%23ff7a9c' opacity='0.8'/%3E%3Crect x='150' y='112' width='34' height='38' rx='4' fill='%23ffb04a' opacity='0.8'/%3E%3Crect x='205' y='124' width='46' height='26' rx='4' fill='%236fe0c0' opacity='0.8'/%3E%3Crect x='270' y='114' width='30' height='36' rx='4' fill='%23b58cff' opacity='0.8'/%3E%3Cpath d='M0 232 L480 220 L480 270 L0 270 Z' fill='%230d0a16'/%3E%3C/svg%3E" alt="《一个人的深夜电影夜》房间投影与彩色物件封面">
+            <span class="midnight-cover-tag">生活方式</span>
+            <span class="midnight-play" aria-hidden="true"></span>
+          </div>
+          <div class="midnight-video-body">
+            <h3>一个人的深夜电影夜：投影仪、旧沙发与三首歌</h3>
+            <p>没有观众也没有掌声的观影仪式，是我们给疲惫生活留下的一点体面。附设备与片单分享。</p>
+            <div class="midnight-meta"><span class="midnight-avatar" style="background:#ff7a9c">简</span><span>简小满</span><span>·</span><span>2.6万次</span><span>·</span><span>09:52</span></div>
+            <div class="midnight-card-actions">
+              <button class="midnight-act" data-midnight-like>♡ <span>538</span></button>
+              <button class="midnight-act" data-midnight-save>☆ 收藏</button>
+              <button class="midnight-act midnight-act-right" data-midnight-open="comment">评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="midnight-video-card" data-cat="craft">
+          <div class="midnight-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%230d1830'/%3E%3Cg stroke='%235b8cff' stroke-width='2' opacity='0.55' fill='none'%3E%3Cpath d='M0 60 H480'/%3E%3Cpath d='M0 120 H480'/%3E%3Cpath d='M0 180 H480'/%3E%3Cpath d='M0 240 H480'/%3E%3C/g%3E%3Crect x='60' y='70' width='150' height='86' rx='6' fill='%231b2a4a'/%3E%3Crect x='230' y='100' width='120' height='56' rx='6' fill='%23283a63'/%3E%3Crect x='110' y='188' width='220' height='42' rx='6' fill='%2323304f'/%3E%3Cpath d='M300 120 L340 138 L300 156 Z' fill='%23ff7a45'/%3E%3C/svg%3E" alt="《剪辑台前的凌晨三点》蓝色时间轴剪辑界面封面">
+            <span class="midnight-cover-tag">创作幕后</span>
+            <span class="midnight-play" aria-hidden="true"></span>
+          </div>
+          <div class="midnight-video-body">
+            <h3>剪辑台前的凌晨三点：一条片子的 27 版修改</h3>
+            <p>从粗剪到定稿，一个四分钟的短片要经历多少次推翻。把幕后流程与剪辑思路完整公开。</p>
+            <div class="midnight-meta"><span class="midnight-avatar" style="background:#5b8cff">林</span><span>林见野</span><span>·</span><span>1.1万次</span><span>·</span><span>18:30</span></div>
+            <div class="midnight-card-actions">
+              <button class="midnight-act" data-midnight-like>♡ <span>208</span></button>
+              <button class="midnight-act" data-midnight-save>☆ 收藏</button>
+              <button class="midnight-act midnight-act-right" data-midnight-open="comment">评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="midnight-video-card" data-cat="city">
+          <div class="midnight-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%230b1b1c'/%3E%3Cpath d='M0 190 Q120 150 240 186 T480 176 L480 270 L0 270 Z' fill='%23132b2b'/%3E%3Cg stroke='%236fe0c0' stroke-width='2' opacity='0.65' fill='none'%3E%3Cpath d='M0 210 Q120 178 240 206 T480 198'/%3E%3C/g%3E%3Crect x='60' y='90' width='14' height='110' fill='%23223a3a'/%3E%3Ccircle cx='67' cy='84' r='10' fill='%23ffe6b8' opacity='0.85'/%3E%3Crect x='380' y='70' width='14' height='130' fill='%23223a3a'/%3E%3Ccircle cx='387' cy='64' r='10' fill='%23ffe6b8' opacity='0.85'/%3E%3C/svg%3E" alt="《跨江大桥的最后一班车》青色江面与路灯封面">
+            <span class="midnight-cover-tag">城市探索</span>
+            <span class="midnight-play" aria-hidden="true"></span>
+          </div>
+          <div class="midnight-video-body">
+            <h3>跨江大桥的最后一班车</h3>
+            <p>晚班公交、末班地铁与桥上的风。我们用一个夜晚，走完这座城市所有会熄灯的地方。</p>
+            <div class="midnight-meta"><span class="midnight-avatar" style="background:#6fe0c0">周</span><span>周渡</span><span>·</span><span>1.4万次</span><span>·</span><span>14:06</span></div>
+            <div class="midnight-card-actions">
+              <button class="midnight-act" data-midnight-like>♡ <span>276</span></button>
+              <button class="midnight-act" data-midnight-save>☆ 收藏</button>
+              <button class="midnight-act midnight-act-right" data-midnight-open="comment">评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="midnight-video-card" data-cat="life">
+          <div class="midnight-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%231d1420'/%3E%3Crect x='40' y='40' width='400' height='190' rx='10' fill='%232a1c2b'/%3E%3Ccircle cx='240' cy='136' r='52' fill='%23ff7a9c' opacity='0.55'/%3E%3Cpath d='M220 112 L272 136 L220 160 Z' fill='%23fff' opacity='0.85'/%3E%3Cg fill='%23ffb04a' opacity='0.6'%3E%3Ccircle cx='80' cy='70' r='5'/%3E%3Ccircle cx='400' cy='210' r='5'/%3E%3Ccircle cx='100' cy='212' r='4'/%3E%3C/g%3E%3C/svg%3E" alt="《唱到打烊的小酒馆》粉色舞台与小酒馆封面">
+            <span class="midnight-cover-tag">音乐现场</span>
+            <span class="midnight-play" aria-hidden="true"></span>
+          </div>
+          <div class="midnight-video-body">
+            <h3>唱到打烊的小酒馆：六位素人歌手的深夜现场</h3>
+            <p>没有修音也没有返场，只有一盏灯、一把吉他。记录城市里仍在坚持唱歌的普通人们。</p>
+            <div class="midnight-meta"><span class="midnight-avatar" style="background:#ffb04a">夏</span><span>夏之岸</span><span>·</span><span>3.2万次</span><span>·</span><span>23:11</span></div>
+            <div class="midnight-card-actions">
+              <button class="midnight-act" data-midnight-like>♡ <span>721</span></button>
+              <button class="midnight-act" data-midnight-save>☆ 收藏</button>
+              <button class="midnight-act midnight-act-right" data-midnight-open="comment">评论</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题 -->
+  <section class="midnight-section midnight-anchor" id="midnightTopics">
+    <div class="midnight-container">
+      <div class="midnight-section-head">
+        <div>
+          <div class="midnight-eyebrow">SERIES / 专题企划</div>
+          <h2>长期更新的<span>专题</span></h2>
+          <p>午夜视频以专题为单位持续运营内容生态，每个专题均由固定编辑与创作者小组跟进。</p>
+        </div>
+      </div>
+      <div class="midnight-topic-grid">
+        <article class="midnight-topic">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23150f1e'/%3E%3Cg fill='%23ffb04a' opacity='0.85'%3E%3Ccircle cx='240' cy='120' r='16'/%3E%3Ccircle cx='150' cy='160' r='9'/%3E%3Ccircle cx='330' cy='160' r='9'/%3E%3Ccircle cx='96' cy='106' r='6'/%3E%3Ccircle cx='384' cy='106' r='6'/%3E%3C/g%3E%3Cpath d='M240 120 L150 160 M240 120 L330 160 M240 120 L96 106 M240 120 L384 106' stroke='%235a3f2a' stroke-width='2'/%3E%3Crect x='0' y='216' width='480' height='54' fill='%230e0a16'/%3E%3C/svg%3E" alt="专题《夜市地图》暖橙灯点连线封面">
+          <div class="midnight-topic-body">
+            <h3>夜市地图 · 十二城夜宵纪事</h3>
+            <p>从南方糖水铺到北方烧烤摊，用十二座城市的夜宵摊，拼出一份深夜的烟火地图。</p>
+            <span class="midnight-status"><i></i>连载中 · 第 8 / 12 集</span>
+          </div>
+        </article>
+        <article class="midnight-topic">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%230f1a26'/%3E%3Crect x='80' y='50' width='320' height='180' rx='8' fill='%23152838'/%3E%3Crect x='110' y='80' width='120' height='12' rx='6' fill='%235b8cff' opacity='0.8'/%3E%3Crect x='110' y='106' width='220' height='8' rx='4' fill='%233b5170'/%3E%3Crect x='110' y='126' width='180' height='8' rx='4' fill='%233b5170'/%3E%3Crect x='110' y='160' width='90' height='30' rx='6' fill='%23ff7a45' opacity='0.85'/%3E%3Crect x='216' y='160' width='90' height='30' rx='6' fill='%232c3f5c'/%3E%3C/svg%3E" alt="专题《夜班手记》蓝色文档版面封面">
+          <div class="midnight-topic-body">
+            <h3>夜班手记 · 十二个职业的凌晨</h3>
+            <p>值班医生、便利店店长、夜班编辑、机房运维……不渲染辛苦，只忠实记录工作本身。</p>
+            <span class="midnight-status"><i></i>连载中 · 第 5 / 12 集</span>
+          </div>
+        </article>
+        <article class="midnight-topic">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23171426'/%3E%3Cg stroke='%23b58cff' stroke-width='2' fill='none' opacity='0.7'%3E%3Ccircle cx='240' cy='135' r='70'/%3E%3Ccircle cx='240' cy='135' r='46'/%3E%3Ccircle cx='240' cy='135' r='22'/%3E%3C/g%3E%3Cpath d='M240 65 L240 205 M170 135 L310 135' stroke='%23ffb04a' stroke-width='2' opacity='0.6'/%3E%3Ccircle cx='240' cy='135' r='7' fill='%23ffb04a'/%3E%3C/svg%3E" alt="专题《镜头之外》紫色同心圆影像封面">
+          <div class="midnight-topic-body">
+            <h3>镜头之外 · 创作者对谈</h3>
+            <p>不聊流量，只聊方法与取舍。每期邀请两位创作者，交换各自拍摄中最难处理的那一段。</p>
+            <span class="midnight-status is-soon"><i></i>更新中 · 第 3 / 6 期</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作者 -->
+  <section class="midnight-section midnight-anchor" id="midnightCreators">
+    <div class="midnight-container">
+      <div class="midnight-section-head">
+        <div>
+          <div class="midnight-eyebrow">CREATORS / 创作者矩阵</div>
+          <h2>把夜晚讲清楚<span>的人</span></h2>
+          <p>午夜视频签约与合作的创作者，来自纪录片、剧情短片、音乐现场与城市观察等不同方向。</p>
+        </div>
+      </div>
+      <div class="midnight-creator-grid">
+        <article class="midnight-creator">
+          <span class="midnight-avatar" style="background:#ffb04a">顾</span>
+          <h3>顾南巷</h3>
+          <div class="midnight-role">城市探索 / 纪录片</div>
+          <p>十年街头拍摄经验，擅长在不打扰的前提下记录陌生人的真实状态，追求克制的影像表达。</p>
+          <div class="midnight-creator-stats"><div><b>86</b>作品</div><div><b>24.1万</b>关注</div></div>
+        </article>
+        <article class="midnight-creator">
+          <span class="midnight-avatar" style="background:#b58cff">沈</span>
+          <h3>沈亦舟</h3>
+          <div class="midnight-role">人物访谈 / 主持</div>
+          <p>前电台深夜节目主持，擅长把沉默也留在片子里。访谈不追问痛点，只陪对方把话说完。</p>
+          <div class="midnight-creator-stats"><div><b>52</b>作品</div><div><b>18.7万</b>关注</div></div>
+        </article>
+        <article class="midnight-creator">
+          <span class="midnight-avatar" style="background:#ff7a9c">简</span>
+          <h3>简小满</h3>
+          <div class="midnight-role">生活方式 / 治愈影像</div>
+          <p>拍一个人吃饭、一个人搬家、一个人过节。她说生活的质感藏在没被安排的那些小时里。</p>
+          <div class="midnight-creator-stats"><div><b>73</b>作品</div><div><b>31.5万</b>关注</div></div>
+        </article>
+        <article class="midnight-creator">
+          <span class="midnight-avatar" style="background:#5b8cff">林</span>
+          <h3>林见野</h3>
+          <div class="midnight-role">创作幕后 / 剪辑</div>
+          <p>把剪辑台搬进镜头，公开自己的失败版本与修改过程，是平台里最受欢迎的技术型创作者。</p>
+          <div class="midnight-creator-stats"><div><b>44</b>作品</div><div><b>12.9万</b>关注</div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 深度解析 -->
+  <section class="midnight-section midnight-anchor" id="midnightStory">
+    <div class="midnight-container">
+      <div class="midnight-essay">
+        <div class="midnight-eyebrow">ABOUT / 品牌深度解析</div>
+        <h2>为什么会有「午夜视频」</h2>
+        <p class="midnight-essay-lead">关于这个品牌的定位、内容标准与长期主义的一次完整说明。</p>
+        <div class="midnight-essay-grid">
+          <p>午夜视频是一个专注深夜时段影像内容的原创视频品牌。我们不把「午夜」理解为一个猎奇的时间标签，而是把它看作一天中最接近私人状态的时段：下班之后、入睡之前、城市安静下来之后，人们才会愿意说一些白天不会说的话。基于这样的判断，午夜视频官方网站从建立第一天起，就把内容重心放在真实记录、克制表达与长久陪伴上，而不是追逐短期的热度。</p>
+          <p>作为国内较早明确定位于深夜内容的企业，午夜视频在垂直领域内持续深耕。平台设有独立的选题会与内容审核机制，所有上线作品都经过事实核对与版权确认，力求每一条内容都是正版、高清、可追溯来源的精品内容。我们同时运营创作者扶持计划，为新人提供拍摄场地、剪辑支持与专题资源，让好的想法不必因为缺少设备或经验而搁置。</p>
+          <p>内容生态的完整性，是我们最看重的事情。午夜视频目前形成了三条稳定的内容线：其一是以城市为单位的纪实系列，记录不同地域在夜间的真实样貌；其二是以人为核心的访谈与故事，关注职业、家庭与个人选择；其三是创作幕后与实用技巧，把方法公开出来，降低表达的门槛。三条线彼此支撑，让平台既有可看性，也有可学性。</p>
+          <p>我们不认为「深夜」必须是孤独的。相反，正因为夜晚安静，人与人才更容易建立真实的连接。午夜视频的社区氛围以包容和温暖为底色，评论区很少出现争吵，更多是彼此分享类似的经历。有用户留言说，看完一条关于末班公交的片子，忽然想起自己也曾在那趟车上睡着过。这样的反馈，正是我们理解的口碑。</p>
+          <p>在品牌建设上，午夜视频坚持以用户至上为原则，做长期而缓慢的事情。我们不追求页面上的数字膨胀，而是希望每一个数字都对应真实的人与真实的观看。平台定期发布企业动态与内容更新日志，公开专题进度与投稿结果，让创作者和观众都能清楚知道我们在做什么、做到哪一步。这种透明，是品牌值得信赖的基础。</p>
+          <p>未来，午夜视频会继续在深夜影像这一垂直领域深耕，扩大原创比例，完善创作者成长路径，并把「夜行者影像挑战」做成一年一度的固定企划。我们相信，一个品牌的影响力不来自声量，而来自它是否持续、稳定、诚实地输出内容。午夜视频愿意做那个在深夜仍然亮着灯的地方，陪你把故事讲完。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 影像墙 + 榜单 -->
+  <section class="midnight-section midnight-anchor" id="midnightWall">
+    <div class="midnight-container">
+      <div class="midnight-section-head">
+        <div>
+          <div class="midnight-eyebrow">GALLERY / 影像墙</div>
+          <h2>用户作品<span>精选</span></h2>
+          <p>来自社区投稿的单帧影像，记录每个人眼中不一样的夜晚。</p>
+        </div>
+      </div>
+      <div class="midnight-wall">
+        <figure class="midnight-wall-lg">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 480'%3E%3Crect width='480' height='480' fill='%23121a2c'/%3E%3Ccircle cx='360' cy='110' r='46' fill='%23ffe6b8' opacity='0.85'/%3E%3Cpath d='M0 340 L120 250 L230 330 L340 220 L480 340 L480 480 L0 480 Z' fill='%231c2a44'/%3E%3Cpath d='M0 400 L140 330 L280 400 L420 320 L480 360 L480 480 L0 480 Z' fill='%23111a2a'/%3E%3Cpath d='M60 380 L100 340 L140 380' stroke='%23ffb04a' stroke-width='3' fill='none'/%3E%3C/svg%3E" alt="社区作品《山顶的第一盏灯》夜空与山脊大图">
+          <figcaption>《山顶的第一盏灯》 · 用户 阿彻</figcaption>
+        </figure>
+        <figure class="midnight-wall-md">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 300'%3E%3Crect width='480' height='300' fill='%231b1424'/%3E%3Crect x='60' y='90' width='360' height='130' rx='10' fill='%23261c33'/%3E%3Cg fill='%23ff7a9c' opacity='0.75'%3E%3Ccircle cx='140' cy='155' r='12'/%3E%3Ccircle cx='200' cy='155' r='12'/%3E%3Ccircle cx='260' cy='155' r='12'/%3E%3Ccircle cx='320' cy='155' r='12'/%3E%3C/g%3E%3Crect x='0' y='250' width='480' height='50' fill='%230f0a18'/%3E%3C/svg%3E" alt="社区作品《窗台上的四盏小灯》粉色灯点中图">
+          <figcaption>《窗台上的四盏小灯》 · 用户 树里</figcaption>
+        </figure>
+        <figure class="midnight-wall-md">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 300'%3E%3Crect width='480' height='300' fill='%230c1c20'/%3E%3Cg stroke='%236fe0c0' stroke-width='2' opacity='0.5' fill='none'%3E%3Cpath d='M0 80 H480 M0 140 H480 M0 200 H480'/%3E%3C/g%3E%3Crect x='90' y='110' width='80' height='130' rx='5' fill='%23172c30'/%3E%3Crect x='200' y='80' width='80' height='160' rx='5' fill='%231c3438'/%3E%3Crect x='310' y='130' width='80' height='110' rx='5' fill='%23172c30'/%3E%3Crect x='0' y='262' width='480' height='38' fill='%23081013'/%3E%3C/svg%3E" alt="社区作品《凌晨三点的楼群》青色建筑中图">
+          <figcaption>《凌晨三点的楼群》 · 用户 陈默</figcaption>
+        </figure>
+        <figure>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23201511'/%3E%3Ccircle cx='150' cy='140' r='62' fill='%23ffb04a' opacity='0.35'/%3E%3Ccircle cx='150' cy='140' r='40' fill='%23ffcf8a' opacity='0.75'/%3E%3Crect x='0' y='238' width='300' height='62' fill='%23140d0b'/%3E%3C/svg%3E" alt="社区作品《一盏灯的重量》暖橙光晕小图">
+          <figcaption>《一盏灯的重量》· 用户 鹿野</figcaption>
+        </figure>
+        <figure>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23131b31'/%3E%3Cpath d='M40 220 L100 150 L160 210 L220 130 L260 190' stroke='%235b8cff' stroke-width='4' fill='none'/%3E%3Ccircle cx='220' cy='130' r='8' fill='%23ffb04a'/%3E%3Crect x='0' y='252' width='300' height='48' fill='%230c1220'/%3E%3C/svg%3E" alt="社区作品《回家路上的折线》蓝色路径小图">
+          <figcaption>《回家路上的折线》· 用户 白鹭</figcaption>
+        </figure>
+        <figure>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%231f1526'/%3E%3Crect x='50' y='70' width='200' height='150' rx='8' fill='%232e2140'/%3E%3Ccircle cx='150' cy='145' r='34' fill='%23b58cff' opacity='0.6'/%3E%3Cpath d='M136 128 L172 145 L136 162 Z' fill='%23fff' opacity='0.85'/%3E%3Crect x='0' y='258' width='300' height='42' fill='%23110c16'/%3E%3C/svg%3E" alt="社区作品《屏幕里的那个人》紫色画面小图">
+          <figcaption>《屏幕里的那个人》· 用户 小林</figcaption>
+        </figure>
+        <figure>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%230d1a18'/%3E%3Crect x='70' y='180' width='160' height='20' rx='10' fill='%23213c37'/%3E%3Crect x='110' y='140' width='80' height='44' rx='6' fill='%232b4a44'/%3E%3Cpath d='M150 108 Q170 128 150 140 Q130 128 150 108 Z' fill='%236fe0c0' opacity='0.75'/%3E%3C/svg%3E" alt="社区作品《桌上的绿萝与冷水》绿色桌面小图">
+          <figcaption>《桌上的绿萝与冷水》· 用户 十七</figcaption>
+        </figure>
+        <figure>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23201a12'/%3E%3Cpath d='M60 240 L90 120 L120 240' stroke='%23ffb04a' stroke-width='3' fill='none'/%3E%3Ccircle cx='90' cy='108' r='9' fill='%23ffe6b8'/%3E%3Crect x='170' y='150' width='70' height='90' rx='5' fill='%23352a1c'/%3E%3Crect x='0' y='262' width='300' height='38' fill='%23140f0a'/%3E%3C/svg%3E" alt="社区作品《候车亭的第七分钟》棕色候车亭小图">
+          <figcaption>《候车亭的第七分钟》· 用户 圆规</figcaption>
+        </figure>
+        <figure>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23101628'/%3E%3Cg fill='%23dfe8ff' opacity='0.75'%3E%3Ccircle cx='80' cy='80' r='3'/%3E%3Ccircle cx='160' cy='60' r='2.5'/%3E%3Ccircle cx='230' cy='96' r='3'/%3E%3Ccircle cx='120' cy='130' r='2'/%3E%3Ccircle cx='200' cy='150' r='2.5'/%3E%3C/g%3E%3Crect x='0' y='248' width='300' height='52' fill='%230a0e18'/%3E%3C/svg%3E" alt="社区作品《抬头看到的那片星》深蓝星空小图">
+          <figcaption>《抬头看到的那片星》· 用户 阿岚</figcaption>
+        </figure>
+      </div>
+
+      <div style="margin-top:44px" class="midnight-rank-wrap">
+        <div class="midnight-rank">
+          <h3>本周热度榜 <span>实时</span></h3>
+          <ol>
+            <li><span class="midnight-no">1</span>唱到打烊的小酒馆<span class="midnight-rank-num">3.2万</span></li>
+            <li><span class="midnight-no">2</span>一个人的深夜电影夜<span class="midnight-rank-num">2.6万</span></li>
+            <li><span class="midnight-no">3</span>午夜十二点的面馆 · 第4集<span class="midnight-rank-num">2.1万</span></li>
+            <li><span class="midnight-no">4</span>守夜人访谈录 · 第1830个夜晚<span class="midnight-rank-num">1.7万</span></li>
+            <li><span class="midnight-no">5</span>跨江大桥的最后一班车<span class="midnight-rank-num">1.4万</span></li>
+          </ol>
+        </div>
+        <div class="midnight-rank">
+          <h3>新人榜 <span>本月</span></h3>
+          <ol>
+            <li><span class="midnight-no">1</span>周渡 · 城市探索<span class="midnight-rank-num">+862</span></li>
+            <li><span class="midnight-no">2</span>夏之岸 · 音乐现场<span class="midnight-rank-num">+745</span></li>
+            <li><span class="midnight-no">3</span>鹿野 · 治愈影像<span class="midnight-rank-num">+603</span></li>
+            <li><span class="midnight-no">4</span>陈默 · 建筑记录<span class="midnight-rank-num">+488</span></li>
+            <li><span class="midnight-no">5</span>十七 · 日常记录<span class="midnight-rank-num">+411</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户评价 -->
+  <section class="midnight-section midnight-anchor" id="midnightVoices">
+    <div class="midnight-container">
+      <div class="midnight-section-head">
+        <div>
+          <div class="midnight-eyebrow">VOICES / 用户评价</div>
+          <h2>他们这样<span>说</span></h2>
+          <p>来自社区用户的真实反馈，评价维度各不相同，我们保留原文。</p>
+        </div>
+      </div>
+      <div class="midnight-quote-grid">
+        <blockquote class="midnight-quote">
+          <p>看了《跨江大桥的最后一班车》，忽然想起自己刚工作那年常坐的那趟末班车。画面很安静，但一直在说话。</p>
+          <footer><span class="midnight-avatar" style="background:#5b8cff">李</span><span>李知白 · 城市观察爱好者</span><span class="midnight-stars">★★★★★</span></footer>
+        </blockquote>
+        <blockquote class="midnight-quote">
+          <p>剪辑教程是真的有用，不是那种讲一堆空话的。跟着做了一遍，节奏立刻不一样了，希望多更新。</p>
+          <footer><span class="midnight-avatar" style="background:#6fe0c0">吴</span><span>吴一鸣 · 独立短片作者</span><span class="midnight-stars">★★★★★</span></footer>
+        </blockquote>
+        <blockquote class="midnight-quote">
+          <p>专题的更新节奏很稳，这点很难得。追了《夜市地图》大半年，每一集都能看出是认真拍的，不是凑数。</p>
+          <footer><span class="midnight-avatar" style="background:#ffb04a">孙</span><span>孙栗 · 夜宵地图收藏者</span><span class="midnight-stars">★★★★★</span></footer>
+        </blockquote>
+        <blockquote class="midnight-quote">
+          <p>投稿流程比想象中简单，编辑会回来看并且给意见，哪怕没有入选也说清楚原因。这个体验很少见。</p>
+          <footer><span class="midnight-avatar" style="background:#b58cff">何</span><span>何小舟 · 投稿创作者</span><span class="midnight-stars">★★★★☆</span></footer>
+        </blockquote>
+        <blockquote class="midnight-quote">
+          <p>我最喜欢的是它不煽情。很多深夜题材会用力过猛，这里反而克制，看完能安静很久。</p>
+          <footer><span class="midnight-avatar" style="background:#ff7a9c">顾</span><span>顾相宜 · 社区用户</span><span class="midnight-stars">★★★★★</span></footer>
+        </blockquote>
+        <blockquote class="midnight-quote">
+          <p>唯一的小建议是希望能按题材做更细的筛选。不过整体画质和内容质量确实是同类里比较靠前的。</p>
+          <footer><span class="midnight-avatar" style="background:#5b8cff">郑</span><span>郑昀 · 长期订阅用户</span><span class="midnight-stars">★★★★☆</span></footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- 动态 -->
+  <section class="midnight-section midnight-anchor" id="midnightLog">
+    <div class="midnight-container">
+      <div class="midnight-section-head">
+        <div>
+          <div class="midnight-eyebrow">UPDATES / 企业动态</div>
+          <h2>官方发布<span>与更新日志</span></h2>
+          <p>午夜视频的品牌动态、内容上线记录与活动公告，均在此公开。</p>
+        </div>
+      </div>
+      <div class="midnight-log">
+        <div class="midnight-log-item">
+          <time datetime="2026-11-18">2026-11-18</time>
+          <h3>《午夜十二点的面馆》第4集上线</h3>
+          <p>城市探索专题继续更新，本集记录了凌晨两点到四点之间进店的七位食客，片长 12 分 18 秒。</p>
+        </div>
+        <div class="midnight-log-item">
+          <time datetime="2026-11-15">2026-11-15</time>
+          <h3>「夜行者影像挑战」报名开启</h3>
+          <p>面向所有创作者开放报名，主题为「凌晨四点的城市」，投稿截止 12 月 20 日，优秀作品将进入官方专题。</p>
+        </div>
+        <div class="midnight-log-item">
+          <time datetime="2026-11-12">2026-11-12</time>
+          <h3>创作者开放日第7期开放预约</h3>
+          <p>本期主题为「访谈中的沉默怎么剪」，由沈亦舟主讲，限 60 席，报名后可通过站内通知查询结果。</p>
+        </div>
+        <div class="midnight-log-item">
+          <time datetime="2026-11-06">2026-11-06</time>
+          <h3>影像墙模块上线用户投稿入口</h3>
+          <p>社区用户可上传单帧影像参与每周精选，所有作品需为原创，入选后将展示于影像墙并注明作者。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="midnight-section midnight-anchor" id="midnightFaq">
+    <div class="midnight-container">
+      <div class="midnight-section-head">
+        <div>
+          <div class="midnight-eyebrow">FAQ / 帮助中心</div>
+          <h2>常见<span>问题</span></h2>
+        </div>
+      </div>
+      <div class="midnight-faq">
+        <details>
+          <summary>午夜视频是什么样的平台？</summary>
+          <p>午夜视频是一个专注深夜时段影像内容的原创视频品牌，官方网站提供专题内容、创作者主页、社区影像墙与投稿入口，所有内容均为原创或已获授权。</p>
+        </details>
+        <details>
+          <summary>如何向平台投稿自己的作品？</summary>
+          <p>点击页面中的「投稿报名」按钮填写表单，注明作品题材、时长与拍摄说明。编辑团队会在七个工作日内给出反馈，未入选也会说明原因。</p>
+        </details>
+        <details>
+          <summary>作品需要满足哪些基本要求？</summary>
+          <p>需为本人原创或拥有完整版权，画面清晰、声音可辨，时长建议在 3 至 30 分钟之间。涉及他人肖像与隐私的内容需事先取得同意。</p>
+        </details>
+        <details>
+          <summary>平台的内容更新频率是怎样的？</summary>
+          <p>专题内容按周更新，热门视频流每两周补充新片，企业动态与更新日志会同步记录所有上线与活动信息，可在「动态」区查看。</p>
+        </details>
+        <details>
+          <summary>可以申请成为签约创作者吗？</summary>
+          <p>可以。持续投稿并保持稳定质量的创作者会收到邀请，签约后可获得拍摄支持、专题资源与内容分成，具体以官方通知为准。</p>
+        </details>
+        <details>
+          <summary>如何联系品牌合作或媒体采访？</summary>
+          <p>请通过页面底部的联系邮箱与我们沟通，注明合作类型与时间安排。品牌合作、场地支持与媒体采访均有独立对接人。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 投稿 / 联系 -->
+  <section class="midnight-section midnight-anchor" id="midnightContact">
+    <div class="midnight-container">
+      <div class="midnight-cta">
+        <div>
+          <div class="midnight-eyebrow">JOIN / 投稿与联系</div>
+          <h2>把你的夜晚，交给午夜视频</h2>
+          <p>无论你拍的是一个人、一条街，还是一段没人注意的时间，只要它是真实的，我们就愿意认真看。投稿通道长期开放，欢迎报名参与本期影像挑战。</p>
+          <div class="midnight-cta-actions">
+            <button class="midnight-btn midnight-btn-primary" data-midnight-open="submit">立即投稿报名</button>
+            <button class="midnight-btn midnight-btn-ghost" data-midnight-open="share">复制分享链接</button>
+            <button class="midnight-btn midnight-btn-ghost" data-midnight-open="feedback">意见反馈</button>
+          </div>
+        </div>
+        <div class="midnight-contact-list">
+          <div><b>合作邮箱</b><span>partner@midnightvideo.example</span></div>
+          <div><b>投稿邮箱</b><span>submit@midnightvideo.example</span></div>
+          <div><b>媒体联系</b><span>press@midnightvideo.example</span></div>
+          <div><b>办公地址</b><span>城市创意园 B 座 7 层 内容中心</span></div>
+          <div><b>工作时间</b><span>周一至周五 10:00 - 19:00</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 页脚 -->
+<footer class="midnight-footer">
+  <div class="midnight-container">
+    <div class="midnight-footer-grid">
+      <div>
+        <h4>午夜视频 · 官方网站</h4>
+        <p>专注深夜影像的原创视频品牌，以真实、克制、温暖为内容底色，深耕垂直领域，持续运营原创内容生态。</p>
+        <p style="margin-top:10px">官方网站｜官方发布｜企业动态｜品牌故事</p>
+      </div>
+      <div>
+        <h4>内容频道</h4>
+        <ul>
+          <li><a href="#midnightVideos">热门视频流</a></li>
+          <li><a href="#midnightTopics">专题企划</a></li>
+          <li><a href="#midnightWall">用户影像墙</a></li>
+          <li><a href="#midnightFocus">本期焦点</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于品牌</h4>
+        <ul>
+          <li><a href="#midnightStory">品牌深度解析</a></li>
+          <li><a href="#midnightCreators">创作者矩阵</a></li>
+          <li><a href="#midnightLog">企业动态</a></li>
+          <li><a href="#midnightFaq">帮助中心</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>参与方式</h4>
+        <ul>
+          <li><a href="#midnightContact">投稿报名</a></li>
+          <li><a href="#midnightContact">品牌合作</a></li>
+          <li><a href="#midnightContact">媒体采访</a></li>
+          <li><a href="#midnightContact">意见反馈</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="midnight-footer-bottom">
+      <span>© 2026 午夜视频 版权所有 · 持续运营中 · 内容均为原创或已获授权</span>
+      <span>品牌备案号：MID-2026-1119 · 用户至上 · 值得信赖</span>
+    </div>
+  </div>
+</footer>
+
+<button class="midnight-top" id="midnightTopBtn" aria-label="回到顶部">↑</button>
+<div class="midnight-toast" id="midnightToast" role="status" aria-live="polite"></div>
+
+<!-- 弹窗 -->
+<div class="midnight-modal" id="midnightModal" role="dialog" aria-modal="true" aria-labelledby="midnightModalTitle">
+  <div class="midnight-modal-card">
+    <button class="midnight-modal-close" id="midnightModalClose" aria-label="关闭">✕</button>
+    <h3 id="midnightModalTitle">投稿报名</h3>
+    <p class="midnight-modal-sub" id="midnightModalSub">填写基本信息，编辑团队会尽快与你联系。</p>
+
+    <div id="midnightModalBody">
+      <div class="midnight-field">
+        <label for="midnightName">称呼</label>
+        <input id="midnightName" type="text" placeholder="如何称呼你">
+      </div>
+      <div class="midnight-field">
+        <label for="midnightWay">联系方式</label>
+        <input id="midnightWay" type="text" placeholder="邮箱或常用社交账号">
+      </div>
+      <div class="midnight-field">
+        <label for="midnightNote">作品说明</label>
+        <textarea id="midnightNote" rows="4" placeholder="题材、时长、拍摄背景，简单说说即可"></textarea>
+      </div>
+      <button class="midnight-btn midnight-btn-primary" id="midnightModalSend">提交</button>
+    </div>
+
+    <div id="midnightShareBody" hidden>
+      <p class="midnight-modal-sub">选择分享方式，或直接复制本站链接。</p>
+      <div class="midnight-share-row">
+        <button data-midnight-copy>复制链接</button>
+        <button data-midnight-toastmsg="已生成微信分享提示">微信</button>
+        <button data-midnight-toastmsg="已生成微博分享提示">微博</button>
+        <button data-midnight-toastmsg="已生成 QQ 分享提示">QQ</button>
+      </div>
+    </div>
+
+    <div id="midnightFeedbackBody" hidden>
+      <p class="midnight-modal-sub">你的意见会被内容团队看到，请尽量描述具体问题。</p>
+      <div class="midnight-field">
+        <label for="midnightFb">反馈内容</label>
+        <textarea id="midnightFb" rows="4" placeholder="例如：某个专题的更新频率、页面使用问题等"></textarea>
+      </div>
+      <button class="midnight-btn midnight-btn-primary" id="midnightFbSend">发送反馈</button>
+    </div>
+
+    <div id="midnightCommentBody" hidden>
+      <p class="midnight-modal-sub">评论将展示在作品下方，请友善表达。</p>
+      <div class="midnight-field">
+        <label for="midnightCm">写评论</label>
+        <textarea id="midnightCm" rows="3" placeholder="说说你看到了什么"></textarea>
+      </div>
+      <button class="midnight-btn midnight-btn-primary" id="midnightCmSend">发布评论</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var toast = document.getElementById("midnightToast");
+  var toastTimer = null;
+  function showToast(msg){
+    if(!toast) return;
+    toast.textContent = msg;
+    toast.classList.add("is-live");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove("is-live"); }, 2200);
+  }
+
+  /* 移动端导航 */
+  var burger = document.getElementById("midnightBurger");
+  var nav = document.getElementById("midnightNav");
+  if(burger && nav){
+    burger.addEventListener("click", function(){
+      var open = nav.classList.toggle("is-open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    nav.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click", function(){
+        nav.classList.remove("is-open");
+        burger.setAttribute("aria-expanded","false");
+      });
+    });
+  }
+
+  /* 搜索前端反馈 */
+  var searchInput = document.getElementById("midnightSearchInput");
+  var searchBtn = document.getElementById("midnightSearchBtn");
+  var searchTip = document.getElementById("midnightSearchTip");
+  var keywords = ["面馆","守夜人","剪辑","小酒馆","跨江大桥","电影夜","夜市","创作者"];
+  function doSearch(){
+    var q = (searchInput && searchInput.value || "").trim();
+    if(!searchTip) return;
+    if(!q){
+      searchTip.textContent = "试试搜索「面馆」「剪辑」或「夜市」";
+      searchTip.classList.add("is-live");
+      return;
+    }
+    var hit = keywords.filter(function(k){ return k.indexOf(q) > -1 || q.indexOf(k) > -1; });
+    searchTip.classList.add("is-live");
+    if(hit.length){
+      searchTip.textContent = "已为你匹配到 " + hit.length + " 个相关内容方向：" + hit.slice(0,3).join("、");
+    }else{
+      searchTip.textContent = "暂未找到「" + q + "」的直接结果，已为你跳转至热门视频流";
+    }
+  }
+  if(searchBtn){ searchBtn.addEventListener("click", doSearch); }
+  if(searchInput){
+    searchInput.addEventListener("keydown", function(e){
+      if(e.key === "Enter"){ e.preventDefault(); doSearch(); }
+    });
+  }
+
+  /* 标签筛选 */
+  var filterWrap = document.getElementById("midnightFilters");
+  var videoCards = Array.prototype.slice.call(document.querySelectorAll("#midnightVideoGrid .midnight-video-card"));
+  if(filterWrap){
+    filterWrap.addEventListener("click", function(e){
+      var btn = e.target.closest(".midnight-filter");
+      if(!btn) return;
+      filterWrap.querySelectorAll(".midnight-filter").forEach(function(b){ b.classList.remove("is-active"); });
+      btn.classList.add("is-active");
+      var cat = btn.getAttribute("data-filter");
+      videoCards.forEach(function(card){
+        var show = (cat === "all" || card.getAttribute("data-cat") === cat);
+        card.style.display = show ? "" : "none";
+      });
+    });
+  }
+
+  /* 点赞 / 收藏 */
+  document.addEventListener("click", function(e){
+    var like = e.target.closest("[data-midnight-like]");
+    if(like){
+      var numEl = like.querySelector("span");
+      var n = numEl ? parseInt(numEl.textContent, 10) || 0 : 0;
+      if(like.classList.contains("is-liked")){
+        like.classList.remove("is-liked");
+        like.firstChild.nodeValue = "♡ ";
+        if(numEl) numEl.textContent = Math.max(0, n - 1);
+      }else{
+        like.classList.add("is-liked");
+        like.firstChild.nodeValue = "♥ ";
+        if(numEl) numEl.textContent = n + 1;
+        showToast("已点赞，感谢你的喜欢");
+      }
+      return;
+    }
+    var save = e.target.closest("[data-midnight-save]");
+    if(save){
+      if(save.classList.contains("is-saved")){
+        save.classList.remove("is-saved");
+        save.textContent = "☆ 收藏";
+      }else{
+        save.classList.add("is-saved");
+        save.textContent = "★ 已收藏";
+        showToast("已加入收藏");
+      }
+      return;
+    }
+    var copyBtn = e.target.closest("[data-midnight-copy]");
+    if(copyBtn){ copyLink(); return; }
+    var msgBtn = e.target.closest("[data-midnight-toastmsg]");
+    if(msgBtn){ showToast(msgBtn.getAttribute("data-midnight-toastmsg")); return; }
+    var opener = e.target.closest("[data-midnight-open]");
+    if(opener){ openModal(opener.getAttribute("data-midnight-open")); }
+  });
+
+  /* 复制链接 */
+  function copyLink(){
+    var url = window.location.href;
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){
+        showToast("链接已复制，可分享给朋友");
+      }).catch(function(){
+        showToast("复制失败，请手动复制地址栏链接");
+      });
+    }else{
+      showToast("当前浏览器不支持自动复制，请手动复制地址栏链接");
+    }
+  }
+
+  /* 弹窗 */
+  var modal = document.getElementById("midnightModal");
+  var modalTitle = document.getElementById("midnightModalTitle");
+  var modalSub = document.getElementById("midnightModalSub");
+  var bodies = {
+    submit: document.getElementById("midnightModalBody"),
+    share: document.getElementById("midnightShareBody"),
+    feedback: document.getElementById("midnightFeedbackBody"),
+    comment: document.getElementById("midnightCommentBody")
+  };
+  var titles = {
+    submit: ["投稿报名","填写基本信息，编辑团队会尽快与你联系。"],
+    share: ["分享本站","把午夜视频分享给同样喜欢夜晚的人。"],
+    feedback: ["意见反馈","你的意见会被内容团队看到。"],
+    comment: ["发表评论","友善表达，是这里的基本约定。"]
+  };
+  function openModal(type){
+    if(!modal || !bodies[type]) return;
+    Object.keys(bodies).forEach(function(k){
+      if(bodies[k]) bodies[k].hidden = (k !== type);
+    });
+    var t = titles[type];
+    modalTitle.textContent = t[0];
+    modalSub.textContent = t[1];
+    modal.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+  }
+  function closeModal(){
+    if(!modal) return;
+    modal.classList.remove("is-open");
+    document.body.style.overflow = "";
+  }
+  var modalClose = document.getElementById("midnightModalClose");
+  if(modalClose) modalClose.addEventListener("click", closeModal);
+  if(modal) modal.addEventListener("click", function(e){ if(e.target === modal) closeModal(); });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeModal(); });
+
+  var sendMap = {
+    midnightModalSend: "投稿已提交，我们会在七个工作日内联系你",
+    midnightFbSend: "反馈已发送，感谢你的建议",
+    midnightCmSend: "评论已发布，感谢你的分享"
+  };
+  Object.keys(sendMap).forEach(function(id){
+    var btn = document.getElementById(id);
+    if(btn){
+      btn.addEventListener("click", function(){
+        showToast(sendMap[id]);
+        closeModal();
+      });
+    }
+  });
+
+  /* 回到顶部 */
+  var topBtn = document.getElementById("midnightTopBtn");
+  if(topBtn){
+    window.addEventListener("scroll", function(){
+      if(window.scrollY > 600){ topBtn.classList.add("is-live"); }
+      else{ topBtn.classList.remove("is-live"); }
+    }, {passive:true});
+    topBtn.addEventListener("click", function(){
+      window.scrollTo({top:0, behavior:"smooth"});
+    });
+  }
+
+  /* 数字滚动 */
+  var counters = document.querySelectorAll("[data-midnight-count]");
+  var counted = false;
+  function runCounters(){
+    if(counted) return;
+    counted = true;
+    counters.forEach(function(el){
+      var target = parseInt(el.getAttribute("data-midnight-count"), 10) || 0;
+      var start = 0;
+      var dur = 900;
+      var t0 = performance.now();
+      function step(t){
+        var p = Math.min(1, (t - t0) / dur);
+        el.textContent = Math.round(start + (target - start) * p);
+        if(p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  if("IntersectionObserver" in window && counters.length){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ runCounters(); io.disconnect(); } });
+    }, {threshold:0.4});
+    counters.forEach(function(c){ io.observe(c); });
+  }else{
+    runCounters();
+  }
+})();
+</script>
+</body>
+            </html>
